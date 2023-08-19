@@ -1,0 +1,32 @@
+<div style="display: flex; flex-direction: row;">
+  <div>
+    <select (change)="selectProject($event)">
+      <option>Select a project</option>
+      <option *ngFor="let project of projects" [value]="project.id">{{project.name}}</option>
+    </select>
+    <p></p>
+    <table>
+      <thead>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Status</th>
+        <th>Actions</th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let task of tasks">
+          <td>{{task.id}}</td>
+          <td>{{task.name}}</td>
+          <td>{{task.description}}</td>
+          <td>{{task.status}}</td>
+          <td>Edit</td>
+          <td><button (click)="delete(task.id)">Delete</button></td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+  <div>
+      hello
+  </div>
+</div>

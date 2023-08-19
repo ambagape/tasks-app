@@ -1,0 +1,50 @@
+<div style="display: flex; flex-direction: row;">
+  <div>
+    <select (change)="selectProject($event)">
+      <option>Select a project</option>
+      <option *ngFor="let project of projects" [value]="project.id">{{project.name}}</option>
+    </select>
+    <p></p>
+    <table>
+      <thead>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Priority</th>
+        <th>Actions</th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let task of tasks">
+          <td>{{task.id}}</td>
+          <td>{{task.name}}</td>
+          <td>{{task.order}}</td>
+          <td>Edit</td>
+          <td><button (click)="delete(task.id)">Delete</button></td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+  <div style="margin-left: 40px; margin-top: 40px">
+      <strong>Create a Task</strong>
+      <form formGroupName="formGroup">
+        <table>
+          <tr>
+            <td>ID: </td>
+            <td></td>
+          </tr>
+          <tr>
+            <td>Name: </td>
+            <td><input formControlName="name" /> <br/> </td>
+          </tr>
+          <tr>
+            <td>Priority: </td>
+            <td><input formControlName="order"/> <br/> </td>
+          </tr>
+          <tr>
+            <td><button>Submit</button> </td>
+          </tr>
+        </table>
+
+      </form>
+  </div>
+</div>
