@@ -26,6 +26,7 @@ This will setup the app and populate the app with seed data
 ## URLs
 
 API: localhost:8000/api
+
 Frontend: localhost:4200
 
 
